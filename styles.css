@@ -1,0 +1,222 @@
+/* ==========================================================================
+   christianhowardtrombone.com
+   Phase 1 — single page, full-bleed hero, dark treatment
+   ========================================================================== */
+
+:root {
+  /* Palette */
+  --bg:      #14120F;   /* page background */
+  --ink:     #F2EEE6;   /* body text */
+  --muted:   #A79E90;   /* captions, metadata */
+  --accent:  #C9A063;   /* links, eyebrow — brass */
+  --rule:    #2E2A23;   /* hairlines */
+  --panel:   #1D1A15;   /* video placeholder fill */
+
+  /* Type */
+  --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+
+  /* Measure */
+  --content-max: 820px;
+  --gutter: clamp(1.5rem, 5vw, 4.5rem);
+}
+
+/* --------------------------------------------------------------- Reset */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, p, ul { margin: 0; }
+ul { list-style: none; padding: 0; }
+img { display: block; }
+
+/* --------------------------------------------------------------- Hero */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 560px;
+  overflow: hidden;
+}
+
+.hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* keeps his face in frame as the viewport aspect changes */
+  object-position: 66% 22%;
+}
+
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(8, 7, 5, 0.88) 0%,
+    rgba(8, 7, 5, 0.66) 40%,
+    rgba(8, 7, 5, 0.06) 72%,
+    rgba(8, 7, 5, 0.30) 100%
+  );
+}
+
+.hero__inner {
+  position: relative;
+  height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--gutter);
+  padding-bottom: clamp(3rem, 8vh, 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.hero__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #E4C68C;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  color: #fff;
+  font-size: clamp(3rem, 1.6rem + 6.2vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 40px rgba(0, 0, 0, 0.5);
+}
+
+.hero__roles {
+  margin-top: 1.25rem;
+  max-width: 58ch;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(0.875rem, 0.84rem + 0.18vw, 0.9875rem);
+  line-height: 1.85;
+}
+
+.hero__roles b { font-weight: 500; color: #fff; }
+
+/* --------------------------------------------------------------- Layout */
+
+main {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: clamp(4rem, 10vw, 7rem) var(--gutter) 0;
+}
+
+section + section { margin-top: clamp(3.5rem, 8vw, 5.5rem); }
+
+/* --------------------------------------------------------------- Bio */
+
+.bio p {
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 1.1rem + 0.7vw, 1.6rem);
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------- Shared */
+
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+}
+
+/* --------------------------------------------------------------- Video */
+
+.video__frame,
+.video__placeholder {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+}
+
+.video__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video__placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.video__caption {
+  margin-top: 0.875rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/* --------------------------------------------------------------- Contact */
+
+.contact__lead {
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.contact__link {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.9rem);
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.contact__link:hover,
+.contact__link:focus-visible { color: #fff; }
+
+/* --------------------------------------------------------------- Footer */
+
+footer {
+  max-width: var(--content-max);
+  margin: clamp(4rem, 10vw, 6rem) auto 0;
+  padding: 1.75rem var(--gutter) 3rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+/* --------------------------------------------------------------- A11y */
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
