@@ -9,6 +9,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # Build (but do not deploy) on PRs, so a broken build is caught before the
+  # merge rather than by a visitor. main is production; the check is the point.
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -32,13 +36,19 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      # Pages-specific steps are skipped on PRs — there the job is only proving
+      # that the site builds.
       - uses: actions/configure-pages@v5
+        if: github.event_name != 'pull_request'
       - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
         with:
           path: _site
 
   deploy:
     needs: build
+    # Never deploy from a pull request — only from main.
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
