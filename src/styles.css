@@ -429,6 +429,13 @@ section + section { margin-top: clamp(3.5rem, 8vw, 5.5rem); }
 
 /* --------------------------------------------------------------- Contact */
 
+/* The address on the Contact page, set apart from the prose around it.
+   `.prose a` would otherwise fade the underline; the contact link keeps its
+   solid one. */
+.contact-email { margin: 2rem 0 2.25rem; }
+
+.prose .contact__link { border-bottom-color: currentColor; }
+
 .contact__lead {
   color: var(--muted);
   margin-bottom: 0.75rem;

@@ -97,13 +97,9 @@ schema: |
   <section class="contact" aria-labelledby="contact-h">
     <h2 id="contact-h" class="eyebrow">Contact</h2>
 
-    <!--
-      This address is a free Porkbun email forward on the canonical domain,
-      pointed at the personal Gmail. If the chtrombone.com mailbox is bought
-      later, either repoint the forward or swap this to christian@chtrombone.com.
-    -->
+    <!-- The address is defined once in src/_data/site.js. Change it there. -->
     <p class="contact__lead">For performance, teaching, and recording inquiries.</p>
-    <p><a class="contact__link" href="mailto:christian@christianhowardtrombone.com">christian@christianhowardtrombone.com</a></p>
+    <p><a class="contact__link" href="mailto:{{ site.email }}">{{ site.email }}</a></p>
   </section>
 
 </main>

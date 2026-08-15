@@ -69,6 +69,7 @@ src/
   index.njk               Home
   about.njk               About        → /about/
   teaching.njk            Teaching     → /teaching/
+  contact.njk             Contact      → /contact/
   sitemap.njk             generated from collections.all
   styles.css              the whole stylesheet
   img/                    hero + OG images
@@ -271,6 +272,29 @@ than guess.
   action is auditioning, so the link belongs on the school's program and audition pages.
   A faculty bio repeats the About page, foregrounds the temporary UMN title, and breaks
   when an appointment changes.
+
+## Contact — no form, by decision
+
+`/contact/` is a page with an address on it, not a form. Three reasons, and the first
+is the binding one:
+
+1. **A form cannot work here.** The site is static on GitHub Pages, so there is no server
+   to post to. Every alternative breaks something the site is built on: a third-party form
+   service needs `form-action` opened in the CSP and adds a dependency that can vanish;
+   any client-side handler needs JavaScript, which `script-src 'none'` forbids; and a
+   `mailto:` form action produces garbled mail and fails silently on many clients.
+2. **The audience does not want one.** `[[christian-howard-website-planning-doc]]` §5:
+   search committees and roster contacts "want an email address they can paste into their
+   own client," not a form standing between them and a reply.
+3. A form would collect names and messages from minors and their parents. An address does
+   not.
+
+If a form is ever genuinely wanted, that is a conversation about the CSP and about hosting,
+not a commit.
+
+**The address lives in `src/_data/site.js` as `email`.** It appears on four pages; change
+it in that one place. Whatever it is set to must actually receive mail — see the Porkbun
+forwarding item in `[[trombone-website-build]]`.
 
 ## Security
 
