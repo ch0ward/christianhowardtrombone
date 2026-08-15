@@ -115,15 +115,39 @@ here, match what exists or ask.
 - **Not date-heavy.** Prose that lists years reads as a CV and sells nothing to a family
   choosing a school. Dates belong in the credentials list and, when it ships, on the CV
   page. Keep "each of the last three years" over a litany of seasons.
-- **No academic-administrative register.** This is a website, not a faculty annual
-  report. Banned outright: "instructor of record," "primary teacher of record," "applied
-  lessons," "degree tracks," "portfolio careers." Also avoid musician shorthand that a
-  parent won't parse — "build an audition" means prepare for one, so say that. Exact
-  position titles are the one exception; those stay verbatim. ("Broader performing
-  record" is fine — Christian likes it, and it's plain English rather than jargon.)
 - **Say each fact once, on the page whose audience needs it.** Brass Methods is
   versatility evidence for a search committee, so it lives on About; it was cut from
   Teaching, where the reader is a prospective trombone student who isn't choosing on it.
+
+## Copy standard — read this before writing a sentence
+
+Every rule below came from a line that shipped badly and had to be rewritten. The site
+is small enough that one limp sentence is a measurable share of it.
+
+- **No academic-administrative register.** This is a website, not a faculty annual
+  report. Banned outright: "instructor of record," "primary teacher of record," "applied
+  lessons," "degree tracks," "portfolio careers," "scholarship consideration." Exact
+  position titles are the one exception; those stay verbatim. ("Broader performing
+  record" is fine — Christian likes it, and it's plain English, not jargon.)
+- **No musician shorthand a parent won't parse.** "Build an audition" means prepare for
+  one. Say that.
+- **If a relative clause is doing the work of one word, use the word.** "Students who
+  play in the ensembles without majoring in music" is "non-majors." This is the single
+  worst failure mode here — long, technically-accurate constructions that no human would
+  say out loud.
+- **Contractions on Teaching, none on About or Home.** Teaching is Christian talking to a
+  seventeen-year-old; "you're," "you'll," "don't," "I'd." The biography is formal
+  because it gets lifted into concert programs.
+- **One list per sentence, maximum.** Two lists in one sentence is the tell that a
+  sentence is doing a database's job. Split it.
+- **No sentence over ~38 words.** Check the built HTML, not the source.
+- **Don't repeat a proper noun in adjacent sentences.** "At the University of Minnesota …
+  he taught Brass Methods at the University of Minnesota" becomes "… at Minnesota."
+- **Don't start three consecutive sentences with "He."**
+- **Never inflate while smoothing.** Merging a guest-artist credit with three attendances
+  into one tidy clause silently promoted all four. Compression is where overstatement
+  gets introduced; re-check every claim against
+  `[[christian-howard-music-master-context]]` after a rewrite, not before.
 - Dark, full-bleed, edge-to-edge. Every peer site in the research sample does this; a
   contained photo in a column reads as a document next to their posters.
 
