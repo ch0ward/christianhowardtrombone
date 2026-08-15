@@ -150,6 +150,10 @@ is small enough that one limp sentence is a measurable share of it.
 - **Plain is not the same as vague.** "Work back to what your body has to do to make it"
   traded jargon for mush. Name the actual things: "work back to the breath, the
   embouchure, and the motion that produce it."
+- **Home stays brief: hero, bio, one video, contact.** Nothing else. A "Read the full
+  biography" link was added during Phase 2 and removed on 2026-08-14 — About is already
+  in the nav, so the link was redundant, and Christian wants the page to stay the length
+  it launched at. Resist adding to it.
 - **The Home bio is fixed copy. Do not rewrite it.** It is the short bio marked "FINAL,
   ship as written" in `[[christian-howard-website-planning-doc]]` §5, and it is reused
   verbatim in his email signature, program books, and roster outreach. Editing it here

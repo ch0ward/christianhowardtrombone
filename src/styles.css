@@ -224,27 +224,6 @@ section + section { margin-top: clamp(3.5rem, 8vw, 5.5rem); }
   line-height: 1.55;
 }
 
-/* Two classes, so this outranks `.bio p` above — otherwise the secondary link
-   inherits the 25px serif of the bio itself and stops reading as secondary. */
-.bio .bio__more {
-  margin-top: 1.5rem;
-  font-family: var(--sans);
-  font-size: 0.9375rem;
-  line-height: 1.65;
-}
-
-.bio__more a {
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(201, 160, 99, 0.4);
-}
-
-.bio__more a:hover,
-.bio__more a:focus-visible {
-  color: #fff;
-  border-bottom-color: currentColor;
-}
-
 /* --------------------------------------------------------------- Page head */
 
 .pagehead { margin-bottom: clamp(2.5rem, 6vw, 3.75rem); }
