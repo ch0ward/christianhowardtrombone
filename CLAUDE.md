@@ -174,6 +174,14 @@ is small enough that one limp sentence is a measurable share of it.
 - **Don't repeat a proper noun in adjacent sentences.** "At the University of Minnesota …
   he taught Brass Methods at the University of Minnesota" becomes "… at Minnesota."
 - **Don't start three consecutive sentences with "He."**
+- **About follows the peer-bio breakdown: Teaching → Orchestral → Chamber → Festivals and
+  guest work → Research → Education.** Taken from the Jeremy Marks bio, which is the
+  positioning model in `[[umn-trombone-search-master-plan-v1-1]]` §25 and is reproduced in
+  `[[christian-howard-website-planning-doc]]` context. One "Performance" heading was
+  hiding three different kinds of work — a titled orchestral chair, chamber membership,
+  and one-off guest artistry all read as equivalent when stacked in one section, which
+  flattens the strongest credential. Keep the categories separate even when one of them is
+  a single sentence; a short Chamber section is honest and will grow when Recordings ships.
 - **Bio prose names the engagement and the role. It never narrates the tasks.** A first
   draft of the honor band work read "screening the recorded auditions and teaching the
   trombone masterclass" — that is a job description, and it is why the paragraph read as
