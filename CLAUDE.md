@@ -104,8 +104,12 @@ here, match what exists or ask.
 - **Nav:** overlaid on the hero on Home (`.nav--over-hero`, absolute, aligned to the
   1400px hero measure); in flow with a hairline on interior pages, aligned to the 820px
   content measure. No JavaScript, so there is no hamburger — the links wrap.
-- **Voice:** restraint. The audience is a search committee chair opening this between
-  meetings. Confidence, not ornamentation.
+- **Voice:** restraint. Confidence, not ornamentation.
+- **Audience, in priority order** (`[[christian-howard-website-planning-doc]]` §1):
+  artist-roster and industry contacts first — the Greg Black outreach is live, and whoever
+  evaluates a roster application Googles him before reading anything. Then search
+  committees and prospective students. Home serves the first group; Teaching serves
+  students and their families. Don't write any page for "everyone."
 - **Person, by page:** third person for Home and About, first person on Teaching,
   addressed to "you." Confirmed deliberate 2026-08-14. The About bio stays third person
   because it is the block that gets lifted verbatim into concert programs, press kits,
@@ -146,9 +150,20 @@ is small enough that one limp sentence is a measurable share of it.
 - **Plain is not the same as vague.** "Work back to what your body has to do to make it"
   traded jargon for mush. Name the actual things: "work back to the breath, the
   embouchure, and the motion that produce it."
-- **"Active across orchestral, chamber, and solo settings on alto, tenor, bass trombone,
-  and euphonium" stays.** It was rewritten once as boilerplate and restored on request.
-  It is the formal register Christian wants for the bio. Leave it alone.
+- **The Home bio is fixed copy. Do not rewrite it.** It is the short bio marked "FINAL,
+  ship as written" in `[[christian-howard-website-planning-doc]]` §5, and it is reused
+  verbatim in his email signature, program books, and roster outreach. Editing it here
+  silently forks it from every other place it appears. The site's one intentional
+  deviation is "Dr. Christian Howard," which the Phase 1 build added and which reinforces
+  that the DMA is conferred. Its opening clause — "active across orchestral, chamber, and
+  solo settings on alto, tenor, bass trombone, and euphonium" — was rewritten once as
+  boilerplate and restored on request. Leave it alone.
+- **"His students" on Home, "previous students" elsewhere.** Home carries the fixed short
+  bio, which reads "His students have gone on to…". About and Teaching use "previous
+  students" per Christian's 2026-08-14 preference. The planning doc's own note is that CV
+  and application materials want "students I have taught and coached," because committees
+  read the credit distinction — that is a third register for a third audience, and it is
+  deliberate, not drift.
 - **One list per sentence, maximum.** Two lists in one sentence is the tell that a
   sentence is doing a database's job. Split it.
 - **No sentence over ~38 words.** Check the built HTML, not the source.
@@ -227,17 +242,45 @@ Build order, each shipping only when its gate clears. Nothing here blocks anythi
    `[[christian-howard-music-master-context]]`, teaching before performance, with dates
    stripped out of the prose. The ATW panel referenced in the original plan is not in the
    vault and is not on the page.
-3. **Recordings.** *Gate:* the two organ recordings, plus a static title card or
-   performance photo for the audio-only UNW Wind Ensemble track so it doesn't sit as a
-   dead thumbnail beside moving video. All assets labeled with piece, ensemble, and date.
-   The homepage video moves here when this ships.
-4. **CV.** Styled page with a prominent PDF download at the top. Don't rebuild CV
+3. **Recordings.** *Gate is closer than the vault suggested* — see
+   `[[christian-howard-website-planning-doc]]` §7. Three assets are already in hand: the
+   brass ensemble solo feature (currently on Home), a quintet performing a challenging
+   work, and euphonium *Songs of Travel* from the DMA recital, which is worth having
+   because it shows the second instrument at doctoral level. Two are not: the organ
+   recordings are still coming, and the UNW Wind Ensemble track is audio-only and needs a
+   static title card or performance photo so it doesn't sit as a dead thumbnail beside
+   moving video. **The page can ship with the three in hand.** Label everything with
+   piece, ensemble, and date. The Home video moves here when the organ recordings land
+   and replace it. Don't lead with the quintet — a viewer has to work out which player is
+   Christian.
+4. **Performances.** *Not in the vault before 2026-08-14; spec is
+   `[[christian-howard-website-planning-doc]]` §10.* **The only page on this site that can
+   actively hurt him** — every other page ages fine, but a stale performance calendar
+   tells a visitor he has stopped playing.
+   - **Title it "Performances," never "Upcoming Performances."** That one word is most of
+     the fix: when the upcoming list empties between seasons, the page still reads as an
+     active career rather than an abandoned calendar.
+   - Upcoming on top, past below. One line per entry: date, ensemble, program, venue.
+   - No ticket links unless he is selling the tickets. The audience is roster contacts
+     and search committees, not a ticket-buying public.
+   - *Gate — and it is a real one:* Christian has to commit to a monthly five-minute
+     maintenance pass. **If that will not honestly happen, do not build the page.** A
+     missing performances page costs nothing; a stale one costs credibility with exactly
+     the people the site is for.
+5. **CV.** Styled page with a prominent PDF download at the top. Don't rebuild CV
    formatting in HTML. *Gate:* current CV finalized.
-5. **Research.** Build it, don't ship the link, until `[[songs-of-travel-publication]]`
-   status changes. *Gate:* two source errors fixed before anything is quoted publicly —
-   two sections both numbered 3.2, and "Whither While I Wander" in Figures 14, 16, and 18.
-   Frame around the low brass argument as phonetic and interpretive, not slide-dependent,
-   and don't describe the DMA itself as a low brass study.
+6. **Research.** Build it, don't ship the link, until `[[songs-of-travel-publication]]`
+   status changes. Full title: *Interpreting the Voice: Vocal Interpretation and
+   Pedagogical Applications in a Trombone Transcription of Selections from Vaughan
+   Williams's Songs of Travel* (University of Minnesota, 2026). Advisors Marissa Benedict
+   and Tom Ashworth; includes an interview with Weston Sprott. *Gate:* two source errors
+   fixed before anything is quoted publicly — two sections both numbered 3.2, and
+   "Whither While I Wander" in Figures 14, 16, and 18. Frame around the low brass argument
+   as phonetic and interpretive (voiced/voiceless, plosive/fricative/nasal/approximant,
+   textual stress, rubato, text painting), not slide-dependent — the one genuinely
+   trombone-specific passage is the natural-vs-tongued legato discussion in §3.2. **Don't
+   describe the DMA itself as a low brass study**; the completed dissertation is a
+   trombone project and says so. The *publication* can reach wider than the research did.
 
 ## Known issue — homepage video
 
