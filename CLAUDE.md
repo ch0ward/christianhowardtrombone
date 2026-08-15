@@ -49,9 +49,14 @@ impression, and nothing will alert you.
 - After any deploy touching layout or assets, verify on a real phone, not just desktop.
 
 Deployment runs through `.github/workflows/deploy.yml` (`npm ci` → `npm run build` →
-upload `_site/`). **Settings → Pages → Source must be "GitHub Actions".** Phase 1 used
-"Deploy from a branch / main / root"; on that setting this workflow builds and nothing
-goes live.
+upload `_site/`). **Settings → Pages → Source must be "GitHub Actions", and it must be
+changed before the Eleventy structure reaches `main`.**
+
+Phase 1 used "Deploy from a branch / `main` / root", which serves the repo root directly.
+The repo root no longer contains an `index.html` — the pages are built into `_site/`,
+which is gitignored. Merging on the old setting therefore does not merely fail to
+deploy; it **takes the live site down** and serves a 404 at the canonical domain. Flip
+the setting first, then merge.
 
 ## Architecture
 
