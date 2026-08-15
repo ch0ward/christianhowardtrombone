@@ -171,8 +171,10 @@ is small enough that one limp sentence is a measurable share of it.
 - **One list per sentence, maximum.** Two lists in one sentence is the tell that a
   sentence is doing a database's job. Split it.
 - **No sentence over ~38 words.** Check the built HTML, not the source.
-- **Don't repeat a proper noun in adjacent sentences.** "At the University of Minnesota …
-  he taught Brass Methods at the University of Minnesota" becomes "… at Minnesota."
+- **Don't repeat a proper noun in adjacent sentences** — but never shorten a name into a
+  claim. "At the University of Minnesota … he taught Brass Methods at the University of
+  Minnesota" becomes "… at Minnesota." "The University of Northwestern" never becomes
+  "Northwestern." When in doubt, restructure the sentence rather than abbreviate.
 - **Don't start three consecutive sentences with "He."**
 - **About is flowing paragraphs with no section headings**, one paragraph per category,
   in this order: primary teaching and student outcomes → orchestral → chamber →
@@ -242,6 +244,13 @@ than guess.
 - **Titles are exact.** "Visiting Lecturer of Trombone and Euphonium" at UMN. Spell out
   "Duluth Superior Symphony Orchestra" in full, everywhere. Never "ABD" — the DMA was
   conferred April 2026.
+- **Always "the University of Northwestern," never "Northwestern."** Bare "Northwestern"
+  reads as Northwestern University in Evanston — a different and far more prestigious
+  institution — so the shortening looks like a padded credential on a page a search
+  committee is reading. Three instances were introduced during Phase 2 purely to avoid
+  repeating the name in adjacent sentences. **Repeating an institution's name is always
+  cheaper than appearing to claim a better one.** The same caution applies to any
+  shortening that collides with a better-known institution.
 - **Minnesota Orchestra is substitute work.** It belongs in bio prose where "frequent
   substitute with" qualifies it, never as a bare line stacked beside two titled positions.
 - **Student outcomes say "previous students."** Christian's call, 2026-08-14, overriding
