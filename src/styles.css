@@ -254,6 +254,17 @@ section + section { margin-top: clamp(3.5rem, 8vw, 5.5rem); }
 
 .prose h2:first-child { margin-top: 0; }
 
+/* The Education label is an eyebrow, not a section head. `.prose h2` outranks
+   `.eyebrow` on family, size, and weight, so restate them rather than losing
+   the specificity fight silently — it rendered as serif small caps. */
+.prose h2.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.25rem;
+}
+
 /* Cormorant has a small x-height and an anemic 400. At the old size and weight
    the lede rendered visually smaller than the Inter body copy beneath it, which
    inverted the hierarchy. 500 at this scale is the minimum that reads as a lead. */
