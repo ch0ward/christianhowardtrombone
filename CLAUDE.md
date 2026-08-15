@@ -174,6 +174,14 @@ is small enough that one limp sentence is a measurable share of it.
 - **Don't repeat a proper noun in adjacent sentences.** "At the University of Minnesota …
   he taught Brass Methods at the University of Minnesota" becomes "… at Minnesota."
 - **Don't start three consecutive sentences with "He."**
+- **Bio prose names the engagement and the role. It never narrates the tasks.** A first
+  draft of the honor band work read "screening the recorded auditions and teaching the
+  trombone masterclass" — that is a job description, and it is why the paragraph read as
+  a list with connectives rather than as a biography. "He leads the trombone division of
+  the High School Honor Band" is the bio sentence. The mechanics belong on the CV.
+- **Name each institution once and hang every role off it.** Two roles at the University
+  of Minnesota belong in one clause, not two sentences that repeat the name. This is what
+  turns an enumeration into prose.
 - **When content is list-shaped, build a list.** Student outcomes are four categories
   crossed with several names each. Three separate attempts to write them as a paragraph
   all read as awkward, because the problem was the structure, not the wording. They are a
