@@ -112,6 +112,12 @@ here, match what exists or ask.
 - **Not date-heavy.** Prose that lists years reads as a CV and sells nothing to a family
   choosing a school. Dates belong in the credentials list and, when it ships, on the CV
   page. Keep "each of the last three years" over a litany of seasons.
+- **No academic-administrative register.** This is a website, not a faculty annual
+  report. Banned outright: "instructor of record," "primary teacher of record," "applied
+  lessons," "degree tracks," "broader performing record," "portfolio careers." Write what
+  a seventeen-year-old and their parent would actually say: he teaches the students, you
+  play in studio class, you build an audition. Exact position titles are the one
+  exception — those stay verbatim.
 - Dark, full-bleed, edge-to-edge. Every peer site in the research sample does this; a
   contained photo in a column reads as a document next to their posters.
 
@@ -137,9 +143,13 @@ than guess.
   conferred April 2026.
 - **Minnesota Orchestra is substitute work.** It belongs in bio prose where "frequent
   substitute with" qualifies it, never as a bare line stacked beside two titled positions.
-- **Student outcomes use accurate attribution:** "students I taught, coached, or
-  mentored." Never imply sole credit for a placement or admission. Don't inflate the
-  King's Brass touring position to the level of an orchestral or military-band appointment.
+- **Student outcomes say "previous students."** Christian's call, 2026-08-14, overriding
+  the older "students I taught, coached, or mentored" phrasing on this site — that
+  formula is hedge-fluff on a web page, and the shorter phrase is both plainer and more
+  specific. The rule it was protecting still stands: **never imply he caused a placement
+  or an admission**, and don't inflate the King's Brass touring position to the level of
+  an orchestral or military-band appointment. Application materials may still want the
+  broader phrase; see `[[christian-howard-music-master-context]]` §8.
 - **Songs of Travel is not published.** Don't write "forthcoming," "accepted," or
   "published" until one is actually true.
 - **UNW is current, confirmed 2026-08-14.** Christian still teaches low brass at the
