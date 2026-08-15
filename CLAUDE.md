@@ -183,6 +183,15 @@ is small enough that one limp sentence is a measurable share of it.
   **Keep the categories distinct even when one is a single sentence** — a titled
   orchestral chair, chamber membership, and one-off guest artistry are not equivalent, and
   stacking them flattens the strongest credential.
+- **No student-era credits in the bio.** Seminars and festivals attended as a participant
+  (Third Coast, Cleveland Trombone Seminar, Atlantic Brass Quintet Seminar), and summer
+  festival orchestras he played in as a student, date the bio rather than support it.
+  A titled orchestral chair makes them read as filler. They stay on the CV.
+- **Auditions: finalist results only, no dates.** Two "Pershing's Own" finalist results,
+  tenor and bass. Semifinals and older placings are CV material — see
+  `[[christian-howard-music-master-context]]` §5, which keeps the full list.
+- **Lead each paragraph with its strongest item.** The professional paragraph opens on the
+  American Trombone Workshop panel, not on the honor band.
 - **Primary teaching stays in its own paragraph.** Honor bands, clinics, and panel work
   are professional activity, not the day job; mixing them dilutes the appointments.
 - **Bio prose names the engagement and the role. It never narrates the tasks.** A first
