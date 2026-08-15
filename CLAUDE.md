@@ -170,6 +170,13 @@ is small enough that one limp sentence is a measurable share of it.
 - **Don't repeat a proper noun in adjacent sentences.** "At the University of Minnesota …
   he taught Brass Methods at the University of Minnesota" becomes "… at Minnesota."
 - **Don't start three consecutive sentences with "He."**
+- **Name a thing the same way everywhere.** The Chautauqua Music School Festival Orchestra
+  is where Christian played and where a student went; About and Teaching had it under two
+  different labels, which reads as two unrelated facts and throws away the more
+  interesting one. Same for exact position titles and ensemble names across pages.
+- **Private lessons are advertised, in person and online.** He has an active private studio
+  in the Twin Cities. Don't describe the sample lesson as free or "at no cost" — the offer
+  stands on its own, and pricing language does not belong on this page.
 - **Never inflate while smoothing.** Merging a guest-artist credit with three attendances
   into one tidy clause silently promoted all four. Compression is where overstatement
   gets introduced; re-check every claim against
