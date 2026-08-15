@@ -135,9 +135,20 @@ is small enough that one limp sentence is a measurable share of it.
   play in the ensembles without majoring in music" is "non-majors." This is the single
   worst failure mode here — long, technically-accurate constructions that no human would
   say out loud.
-- **Contractions on Teaching, none on About or Home.** Teaching is Christian talking to a
-  seventeen-year-old; "you're," "you'll," "don't," "I'd." The biography is formal
-  because it gets lifted into concert programs.
+- **No contractions anywhere, including Teaching.** Christian's call, 2026-08-14, after
+  a draft that used them. The register across the whole site is formal; Teaching earns
+  its warmth from being in first person and addressed to "you," not from sounding
+  casual. "You will play in studio class," not "you'll."
+- **No selling, no comparatives, no brag.** A draft line offered a sample lesson and
+  added that it "tells us both far more than an audition day can." Christian runs those
+  audition days. State what is on offer and stop: "you are welcome to arrange a sample
+  lesson with me before you audition, at no cost."
+- **Plain is not the same as vague.** "Work back to what your body has to do to make it"
+  traded jargon for mush. Name the actual things: "work back to the breath, the
+  embouchure, and the motion that produce it."
+- **"Active across orchestral, chamber, and solo settings on alto, tenor, bass trombone,
+  and euphonium" stays.** It was rewritten once as boilerplate and restored on request.
+  It is the formal register Christian wants for the bio. Leave it alone.
 - **One list per sentence, maximum.** Two lists in one sentence is the tell that a
   sentence is doing a database's job. Split it.
 - **No sentence over ~38 words.** Check the built HTML, not the source.
