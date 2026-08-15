@@ -37,7 +37,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-h1, h2, p, ul, dl, dd { margin: 0; }
+h1, h2, h3, p, ul, dl, dd { margin: 0; }
 ul { list-style: none; padding: 0; }
 img { display: block; }
 
@@ -300,6 +300,51 @@ section + section { margin-top: clamp(3.5rem, 8vw, 5.5rem); }
   margin-top: 1.75rem;
   color: var(--muted);
   font-size: 0.9375rem;
+}
+
+/* --------------------------------------------------------------- Studios */
+
+.studio {
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--rule);
+}
+
+.studio + .studio { margin-top: 2.5rem; }
+
+.studio h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.4rem, 1.25rem + 0.7vw, 1.75rem);
+  line-height: 1.2;
+}
+
+.studio__role {
+  margin: 0.35rem 0 1.1rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.studio__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.75rem;
+  margin-top: 1.25rem;
+}
+
+.studio__links a {
+  font-size: 0.875rem;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 160, 99, 0.4);
+}
+
+.studio__links a:hover,
+.studio__links a:focus-visible {
+  color: #fff;
+  border-bottom-color: currentColor;
 }
 
 /* --------------------------------------------------------------- Credentials */

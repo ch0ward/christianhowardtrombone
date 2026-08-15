@@ -106,9 +106,12 @@ here, match what exists or ask.
   content measure. No JavaScript, so there is no hamburger — the links wrap.
 - **Voice:** restraint. The audience is a search committee chair opening this between
   meetings. Confidence, not ornamentation.
-- **Person, by page:** third person for Home and About (it's a biography). First person
-  for Teaching (it's a teaching statement, and the mandated student-outcome phrasing is
-  first person). Don't mix within a page.
+- **Person, by page:** third person for Home and About (they're biography). First person
+  on Teaching, addressed to "you" — that page is written for prospective students and
+  their families, not for a committee. Don't mix within a page.
+- **Not date-heavy.** Prose that lists years reads as a CV and sells nothing to a family
+  choosing a school. Dates belong in the credentials list and, when it ships, on the CV
+  page. Keep "each of the last three years" over a litany of seasons.
 - Dark, full-bleed, edge-to-edge. Every peer site in the research sample does this; a
   contained photo in a column reads as a document next to their posters.
 
@@ -139,10 +142,15 @@ than guess.
   King's Brass touring position to the level of an orchestral or military-band appointment.
 - **Songs of Travel is not published.** Don't write "forthcoming," "accepted," or
   "published" until one is actually true.
-- **UNW status is unresolved.** Don't state it on the site without confirming first. Note
-  the Home bio already claims "adjunct low brass instructor at the University of
-  Northwestern" — that line predates the rule and is still unverified. About and Teaching
-  deliberately refer to UNW only in past-tense teaching and performance credits.
+- **UNW is current, confirmed 2026-08-14.** Christian still teaches low brass at the
+  University of Northwestern – St. Paul; the site states it in the present tense on Home,
+  About, and Teaching. Still unconfirmed: whether the "Brass Ensemble Director" half of
+  the recorded title is active. Don't add it without asking.
+- **Outbound links go to programs, not to faculty bios.** See
+  `[[2026-08-14-decision-teaching-page-links-to-programs]]`. A prospective student's next
+  action is auditioning, so the link belongs on the school's program and audition pages.
+  A faculty bio repeats the About page, foregrounds the temporary UMN title, and breaks
+  when an appointment changes.
 
 ## Security
 
@@ -158,13 +166,16 @@ starts. **This matters more now that the Teaching page can bring minors onto the
 
 Build order, each shipping only when its gate clears. Nothing here blocks anything else.
 
-1. ~~**Teaching**~~ — built. Two things still need Christian's sign-off: the exact
-   phrasing of the Navy fleet band lead line, and the philosophy prose, which was drafted
-   from the themes in `[[umn-trombone-search-master-plan-v1-1]]` §10 rather than from a
-   finished statement. Outcomes list programs only; no students are named.
+1. ~~**Teaching**~~ — built, and rebuilt on 2026-08-14 around the two studios rather than
+   around a philosophy statement. It leads with a sample-lesson invitation, gives each
+   studio its own block with links out to that school's program and audition pages, then
+   student outcomes, then a short "In lessons" section. The full teaching statement
+   belongs in the application packet, not here. Outcomes list programs only; no students
+   are named.
 2. ~~**About**~~ — built. Long bio written from
-   `[[christian-howard-music-master-context]]`. The ATW panel referenced in the original
-   plan is not in the vault and is not on the page.
+   `[[christian-howard-music-master-context]]`, teaching before performance, with dates
+   stripped out of the prose. The ATW panel referenced in the original plan is not in the
+   vault and is not on the page.
 3. **Recordings.** *Gate:* the two organ recordings, plus a static title card or
    performance photo for the audio-only UNW Wind Ensemble track so it doesn't sit as a
    dead thumbnail beside moving video. All assets labeled with piece, ensemble, and date.
