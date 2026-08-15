@@ -170,6 +170,12 @@ is small enough that one limp sentence is a measurable share of it.
 - **Don't repeat a proper noun in adjacent sentences.** "At the University of Minnesota …
   he taught Brass Methods at the University of Minnesota" becomes "… at Minnesota."
 - **Don't start three consecutive sentences with "He."**
+- **When content is list-shaped, build a list.** Student outcomes are four categories
+  crossed with several names each. Three separate attempts to write them as a paragraph
+  all read as awkward, because the problem was the structure, not the wording. They are a
+  `<dl class="outcomes">` on Teaching now. About keeps a two-sentence summary, matching the
+  flat-list style of the approved Home bio. If a sentence resists three rewrites, stop
+  rewriting and ask what shape the content actually is.
 - **Name a thing the same way everywhere.** The Chautauqua Music School Festival Orchestra
   is where Christian played and where a student went; About and Teaching had it under two
   different labels, which reads as two unrelated facts and throws away the more
