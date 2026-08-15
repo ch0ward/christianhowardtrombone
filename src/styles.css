@@ -1,6 +1,6 @@
 /* ==========================================================================
    christianhowardtrombone.com
-   Phase 1 — single page, full-bleed hero, dark treatment
+   Phase 2 — home, about, teaching. Full-bleed hero, dark treatment.
    ========================================================================== */
 
 :root {
@@ -37,9 +37,96 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-h1, h2, p, ul { margin: 0; }
+h1, h2, p, ul, dl, dd { margin: 0; }
 ul { list-style: none; padding: 0; }
 img { display: block; }
+
+/* --------------------------------------------------------------- Skip link */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+
+.skip-link:focus {
+  left: var(--gutter);
+  top: 0.75rem;
+  z-index: 10;
+  padding: 0.6rem 1rem;
+  background: var(--bg);
+  color: var(--ink);
+  border: 1px solid var(--accent);
+  font-size: 0.8125rem;
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------- Nav */
+
+.nav { border-bottom: 1px solid var(--rule); }
+
+.nav__inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 1.1rem var(--gutter);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem 1.75rem;
+  flex-wrap: wrap;
+}
+
+.nav__name {
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+
+.nav__links a {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.nav__links a:hover,
+.nav__links a:focus-visible,
+.nav__name:hover,
+.nav__name:focus-visible { color: var(--ink); }
+
+.nav__links a[aria-current="page"] { color: var(--accent); }
+
+/* Home only: the bar floats over the hero photo rather than sitting above it,
+   so the photo still runs edge to edge from the top of the viewport. */
+.nav--over-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  border-bottom: 0;
+}
+
+.nav--over-hero .nav__inner {
+  max-width: 1400px;
+  justify-content: flex-end;
+}
+
+.nav--over-hero .nav__links a { color: rgba(255, 255, 255, 0.78); }
+
+.nav--over-hero .nav__links a:hover,
+.nav--over-hero .nav__links a:focus-visible { color: #fff; }
+
+.nav--over-hero .nav__links a[aria-current="page"] { color: #E4C68C; }
 
 /* --------------------------------------------------------------- Hero */
 
@@ -122,6 +209,11 @@ main {
   padding: clamp(4rem, 10vw, 7rem) var(--gutter) 0;
 }
 
+/* Interior pages have no hero, so the nav sits in flow directly above main
+   and the top padding can come in. On home this selector never matches,
+   because the hero header sits between the nav and main. */
+.nav + main { padding-top: clamp(2.75rem, 7vw, 4.5rem); }
+
 section + section { margin-top: clamp(3.5rem, 8vw, 5.5rem); }
 
 /* --------------------------------------------------------------- Bio */
@@ -130,6 +222,101 @@ section + section { margin-top: clamp(3.5rem, 8vw, 5.5rem); }
   font-family: var(--serif);
   font-size: clamp(1.3rem, 1.1rem + 0.7vw, 1.6rem);
   line-height: 1.55;
+}
+
+/* Two classes, so this outranks `.bio p` above — otherwise the secondary link
+   inherits the 25px serif of the bio itself and stops reading as secondary. */
+.bio .bio__more {
+  margin-top: 1.5rem;
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.bio__more a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 160, 99, 0.4);
+}
+
+.bio__more a:hover,
+.bio__more a:focus-visible {
+  color: #fff;
+  border-bottom-color: currentColor;
+}
+
+/* --------------------------------------------------------------- Page head */
+
+.pagehead { margin-bottom: clamp(2.5rem, 6vw, 3.75rem); }
+
+.pagehead .eyebrow { margin-bottom: 0.875rem; }
+
+.pagehead h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  color: #fff;
+  font-size: clamp(2.5rem, 1.7rem + 3.4vw, 4.25rem);
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+}
+
+/* --------------------------------------------------------------- Prose */
+
+.prose p { margin-bottom: 1.15rem; }
+.prose p:last-child { margin-bottom: 0; }
+
+.prose h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.5rem, 1.3rem + 0.9vw, 2rem);
+  line-height: 1.2;
+  margin: clamp(2.75rem, 6vw, 3.75rem) 0 1.1rem;
+}
+
+.prose h2:first-child { margin-top: 0; }
+
+.prose .lede {
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  line-height: 1.5;
+  margin-bottom: 1.4rem;
+}
+
+.prose a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 160, 99, 0.4);
+}
+
+.prose a:hover,
+.prose a:focus-visible {
+  color: #fff;
+  border-bottom-color: currentColor;
+}
+
+.prose i { font-style: italic; }
+
+.meta {
+  margin-top: 1.75rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* --------------------------------------------------------------- Credentials */
+
+.creds > div {
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.creds > div:last-child { border-bottom: 1px solid var(--rule); }
+
+.creds dt { font-weight: 500; }
+
+.creds dd {
+  margin-top: 0.15rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
 }
 
 /* --------------------------------------------------------------- Shared */
@@ -187,7 +374,11 @@ section + section { margin-top: clamp(3.5rem, 8vw, 5.5rem); }
 
 .contact__link {
   font-family: var(--serif);
-  font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.9rem);
+  /* Shallower floor than Phase 1 used: at ~375px the address rendered wider
+     than the gutter and was clipped. break-word is the backstop below 360px,
+     where no type size short of unreadable fits it on one line. */
+  font-size: clamp(1.15rem, 0.95rem + 1vw, 1.9rem);
+  overflow-wrap: break-word;
   color: var(--accent);
   text-decoration: none;
   border-bottom: 1px solid currentColor;

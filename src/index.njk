@@ -1,0 +1,110 @@
+---
+layout: base.njk
+isHome: true
+ogType: profile
+title: Christian Howard | Trombone & Euphonium
+description: Christian Howard is a trombonist and educator based in the Twin Cities. Second trombone of the Duluth Superior Symphony Orchestra and Visiting Lecturer of Trombone and Euphonium at the University of Minnesota.
+ogTitle: Christian Howard | Trombone & Euphonium
+ogDescription: Trombonist and educator based in the Twin Cities. Second trombone, Duluth Superior Symphony Orchestra. Visiting Lecturer of Trombone and Euphonium, University of Minnesota.
+schema: |
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Christian Howard",
+    "url": "https://christianhowardtrombone.com/",
+    "image": "https://christianhowardtrombone.com/img/og.jpg",
+    "jobTitle": "Trombonist and Educator",
+    "description": "Trombonist and educator based in the Twin Cities, active across orchestral, chamber, and solo settings on alto, tenor, bass trombone, and euphonium.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Minneapolis",
+      "addressRegion": "MN",
+      "addressCountry": "US"
+    },
+    "affiliation": [
+      { "@type": "Organization", "name": "University of Minnesota" },
+      { "@type": "Organization", "name": "University of Northwestern" },
+      { "@type": "MusicGroup", "name": "Duluth Superior Symphony Orchestra" }
+    ],
+    "sameAs": [
+      "https://www.youtube.com/@christianhowardtrombone"
+    ]
+  }
+---
+
+<!-- ============ HERO (full-bleed) ============ -->
+<header class="hero">
+  <picture>
+    <source type="image/webp"
+      srcset="/img/wide-1600.webp 1600w, /img/wide-2400.webp 2400w"
+      sizes="100vw">
+    <img class="hero__img"
+      src="/img/wide-1600.jpg"
+      srcset="/img/wide-1600.jpg 1600w, /img/wide-2400.jpg 2400w"
+      sizes="100vw"
+      width="2400" height="1868"
+      alt="Christian Howard, trombonist and educator, holding a tenor trombone."
+      fetchpriority="high" decoding="async">
+  </picture>
+
+  <div class="hero__scrim" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+    <p class="hero__eyebrow">Trombonist &amp; Educator</p>
+    <!-- No &nbsp; between the names: at ~375px the one-line name overflows the
+         gutter and .hero's overflow:hidden silently clips the final letters.
+         Letting it wrap to two lines is the only viewport where it does so. -->
+    <h1>Christian Howard</h1>
+    <ul class="hero__roles">
+      <li><b>University of Minnesota</b> &middot; Visiting Lecturer of Trombone &amp; Euphonium</li>
+      <li><b>Duluth Superior Symphony Orchestra</b> &middot; Second Trombone</li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ BIO ============ -->
+  <section class="bio" aria-label="Biography">
+    <p>Dr. Christian Howard is a trombonist and educator based in the Twin Cities, active across orchestral, chamber, and solo settings on alto, tenor, bass trombone, and euphonium. He currently holds the second trombone chair with the Duluth Superior Symphony Orchestra and is a frequent substitute with the Minnesota Orchestra. He is Visiting Lecturer of Trombone and Euphonium at the University of Minnesota and adjunct low brass instructor at the University of Northwestern. His students have gone on to Eastman, Rice, Carnegie Mellon, and DePaul.</p>
+    <p class="bio__more"><a href="/about/">Read the full biography</a></p>
+  </section>
+
+  <!-- ============ VIDEO ============ -->
+  <section class="video" aria-labelledby="listen">
+    <h2 id="listen" class="eyebrow">Listen</h2>
+
+    <!--
+      Video: GPaUuTGZofM, starting at 12:30 (start=750) so playback opens
+      on the feature rather than the top of the concert.
+      NOTE: this video lives on the "Zach Gingerich" channel, not on
+      @christianhowardtrombone. See CLAUDE.md, "Known issue — homepage video".
+      TODO: add the piece title to the caption and the iframe title.
+    -->
+    <div class="video__frame">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/GPaUuTGZofM?start=750&amp;rel=0"
+        title="Christian Howard, trombone — Compass Rose Brass Ensemble, April 2023"
+        loading="lazy"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    </div>
+    <p class="video__caption">Compass Rose Brass Ensemble &middot; April 2023</p>
+
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h" class="eyebrow">Contact</h2>
+
+    <!--
+      This address is a free Porkbun email forward on the canonical domain,
+      pointed at the personal Gmail. If the chtrombone.com mailbox is bought
+      later, either repoint the forward or swap this to christian@chtrombone.com.
+    -->
+    <p class="contact__lead">For performance, teaching, and recording inquiries.</p>
+    <p><a class="contact__link" href="mailto:christian@christianhowardtrombone.com">christian@christianhowardtrombone.com</a></p>
+  </section>
+
+</main>
