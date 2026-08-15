@@ -106,18 +106,24 @@ here, match what exists or ask.
   content measure. No JavaScript, so there is no hamburger — the links wrap.
 - **Voice:** restraint. The audience is a search committee chair opening this between
   meetings. Confidence, not ornamentation.
-- **Person, by page:** third person for Home and About (they're biography). First person
-  on Teaching, addressed to "you" — that page is written for prospective students and
-  their families, not for a committee. Don't mix within a page.
+- **Person, by page:** third person for Home and About, first person on Teaching,
+  addressed to "you." Confirmed deliberate 2026-08-14. The About bio stays third person
+  because it is the block that gets lifted verbatim into concert programs, press kits,
+  and other people's sites — first person there means maintaining a second copy forever.
+  Teaching is Christian talking to a prospective student. **Never mix the two within a
+  single page**; that is what actually reads as sloppy, not the split itself.
 - **Not date-heavy.** Prose that lists years reads as a CV and sells nothing to a family
   choosing a school. Dates belong in the credentials list and, when it ships, on the CV
   page. Keep "each of the last three years" over a litany of seasons.
 - **No academic-administrative register.** This is a website, not a faculty annual
   report. Banned outright: "instructor of record," "primary teacher of record," "applied
-  lessons," "degree tracks," "broader performing record," "portfolio careers." Write what
-  a seventeen-year-old and their parent would actually say: he teaches the students, you
-  play in studio class, you build an audition. Exact position titles are the one
-  exception — those stay verbatim.
+  lessons," "degree tracks," "portfolio careers." Also avoid musician shorthand that a
+  parent won't parse — "build an audition" means prepare for one, so say that. Exact
+  position titles are the one exception; those stay verbatim. ("Broader performing
+  record" is fine — Christian likes it, and it's plain English rather than jargon.)
+- **Say each fact once, on the page whose audience needs it.** Brass Methods is
+  versatility evidence for a search committee, so it lives on About; it was cut from
+  Teaching, where the reader is a prospective trombone student who isn't choosing on it.
 - Dark, full-bleed, edge-to-edge. Every peer site in the research sample does this; a
   contained photo in a column reads as a document next to their posters.
 
