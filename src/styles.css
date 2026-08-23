@@ -146,7 +146,7 @@ img { display: block; }
   object-fit: cover;
   /* Centre-weighted: the 21:9 frame puts the subject mid-width, and a tall
      viewport crops the sides. Mobile uses its own frame, retuned below. */
-  object-position: 50% 42%;
+  object-position: 52% 46%;
 }
 
 @media (max-width: 767px) {
@@ -162,15 +162,16 @@ img { display: block; }
      a cool city and a neutral scrim greys it, where a warm one pulls it toward
      the page temperature and lets the sunset keep reading as brass. */
   background:
-    linear-gradient(to top,
-      rgba(20, 18, 15, 0.94) 0%,
-      rgba(20, 18, 15, 0.58) 30%,
-      rgba(20, 18, 15, 0.00) 64%),
+    linear-gradient(to top right,
+      rgba(20, 18, 15, 0.96) 0%,
+      rgba(20, 18, 15, 0.62) 26%,
+      rgba(20, 18, 15, 0.12) 52%,
+      rgba(20, 18, 15, 0.00) 68%),
     linear-gradient(100deg,
-      rgba(20, 18, 15, 0.76) 0%,
-      rgba(20, 18, 15, 0.34) 44%,
-      rgba(20, 18, 15, 0.00) 72%,
-      rgba(20, 18, 15, 0.22) 100%);
+      rgba(20, 18, 15, 0.62) 0%,
+      rgba(20, 18, 15, 0.26) 46%,
+      rgba(20, 18, 15, 0.00) 74%,
+      rgba(20, 18, 15, 0.18) 100%);
 }
 
 .hero__inner {
@@ -201,6 +202,11 @@ img { display: block; }
   font-size: clamp(3rem, 1.6rem + 6.2vw, 7rem);
   line-height: 0.95;
   letter-spacing: 0.01em;
+  /* The hero frame puts him in the right half. One line of "Christian Howard"
+     runs about 57% of the measure and would collide, so the name is allowed
+     only ~11 characters and wraps to two lines. Natural wrap, no <br>, no
+     &nbsp; — see the heading rule in CLAUDE.md. */
+  max-width: 11ch;
   text-shadow: 0 2px 40px rgba(0, 0, 0, 0.5);
 }
 
