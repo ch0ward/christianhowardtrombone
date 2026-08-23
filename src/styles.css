@@ -121,7 +121,7 @@ img { display: block; }
   justify-content: flex-end;
 }
 
-.nav--over-hero .nav__links a { color: rgba(255, 255, 255, 0.78); }
+.nav--over-hero .nav__links a { color: #fff; }
 
 .nav--over-hero .nav__links a:hover,
 .nav--over-hero .nav__links a:focus-visible { color: #fff; }
@@ -162,6 +162,10 @@ img { display: block; }
      a cool city and a neutral scrim greys it, where a warm one pulls it toward
      the page temperature and lets the sunset keep reading as brass. */
   background:
+    linear-gradient(to bottom,
+      rgba(20, 18, 15, 0.58) 0%,
+      rgba(20, 18, 15, 0.22) 8%,
+      rgba(20, 18, 15, 0.00) 17%),
     linear-gradient(to top right,
       rgba(20, 18, 15, 0.96) 0%,
       rgba(20, 18, 15, 0.62) 26%,
