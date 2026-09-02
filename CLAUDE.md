@@ -13,13 +13,15 @@ instructions go here, in `CLAUDE.md`, which is for Claude sessions, not visitors
 
 Static site. No client-side JavaScript at all, no framework, no CSS pipeline. Eleventy
 is the only dependency, and it exists solely so the header, footer, and nav live in one
-file instead of being hand-copied across pages. Desktop first load is ~216KB including
-the full-viewport hero photo — treat that as a budget, not a trivium.
+file instead of being hand-copied across pages. Desktop first load is ~125KB including
+the full-viewport hero photo, mobile ~86KB — treat that as a budget, not a trivium.
+Phase 1 was 216KB; AVIF bought the headroom, so don't spend it back.
 
 Phase 1 (live since 2026-08-13): single page — full-bleed hero, name, affiliations,
 short bio, one embedded video, contact.
-Phase 2 (in progress): Home, About, and Teaching are built. Recordings, CV, and
-Research are not, and each is gated — see below.
+Phase 2 (live since 2026-08-15): Home, About, Teaching, Contact, and a nav.
+Phase 3 (in progress): the August 2026 photography. Recordings, CV, Performances, and
+Research are still unbuilt, and each is gated — see below.
 
 ## Build and preview
 
@@ -72,7 +74,7 @@ src/
   contact.njk             Contact      → /contact/
   sitemap.njk             generated from collections.all
   styles.css              the whole stylesheet
-  img/                    hero + OG images
+  img/                    hero (desktop + mobile), teaching, OG card
   *.png, favicon.ico      icons, copied to the site root
   CNAME, _headers, robots.txt
 ```
@@ -99,9 +101,24 @@ here, match what exists or ask.
 - **Type:** Cormorant Garamond for the name, page headings, bio, and contact link. Inter
   for everything else. Google Fonts, with Georgia and system sans as fallbacks.
 - **Hero pattern:** an `<img>` with `object-fit: cover`, not a CSS background, so it keeps
-  `srcset`, `alt`, and priority loading. `object-position: 66% 22%` keeps the face in
-  frame as viewport aspect changes. The scrim is a 100deg gradient, heavy where type
-  sits, clearing where the photo needs to read.
+  `srcset`, `alt`, and priority loading. **Desktop and mobile are separate frames**, not
+  one image re-cropped by CSS — a 1.9:1 photograph in a phone viewport collapses to a
+  vertical sliver, so `<source media="(max-width: 767px)">` swaps in a 4:5 crop.
+  `object-position` is `52% 46%` desktop, `50% 30%` mobile.
+- **The hero scrim is three layers, and each one has a job.** A short top band so the nav
+  stays legible; a bottom-left corner wedge under the type; and a soft 100deg pass on the
+  left edge. All tinted to `--bg` `rgb(20,18,15)`, never neutral black — the photography is
+  a cool city against a warm palette, and a neutral scrim greys it where a warm one pulls
+  it toward the page and lets the sunset keep reading as brass.
+  - **Do not make the bottom scrim full-width.** It was `to top` and it swallowed his hands
+    and the bell of the trombone. `to top right` covers the type and clears the subject.
+  - **Do not remove the top band.** Without it the nav sits on open sky at 78% white and
+    disappears. The corner wedge deliberately leaves the top-right clear so the skyline
+    survives, which is exactly where the nav lives.
+- **The hero name wraps to two lines on purpose.** `max-width: 11ch` on `.hero h1`. One line
+  of "Christian Howard" runs about 57% of the measure and the subject begins at 49%, so it
+  collided at every framing. Natural wrap — no `<br>`, no `&nbsp;`.
+
 - **Nav:** overlaid on the hero on Home (`.nav--over-hero`, absolute, aligned to the
   1400px hero measure); in flow with a hairline on interior pages, aligned to the 820px
   content measure. No JavaScript, so there is no hamburger — the links wrap.
@@ -123,6 +140,29 @@ here, match what exists or ask.
 - **Say each fact once, on the page whose audience needs it.** Brass Methods is
   versatility evidence for a search committee, so it lives on About; it was cut from
   Teaching, where the reader is a prospective trombone student who isn't choosing on it.
+
+## Photography — hard-won rules
+
+- **Crop from the originals, never from a delivered export.** Every problem in the August
+  2026 session traced to this. The hero came from IMG_1624, whose delivered crop
+  (`hero-mobile.jpg`, 4:5) had thrown away the street canyon — the one element that made
+  the frame work as a hero at all.
+- **But the originals are all stored rotated,** and `sips` reports dimensions that
+  contradict how they decode. IMG_1554 and IMG_1615 both defeated `sips -r`. If a frame
+  needs re-cropping from the original, fix the rotation in Photos first and re-export.
+- **An overlay hero needs the subject large AND a wide quiet area.** Most frames have one
+  or the other. If a candidate has only one, it is not a hero, whatever else it has going
+  for it — that is what ruled out both frames the image brief recommended.
+- **One image per page, and one idea per image.** Home is identity, Teaching is the
+  doubling. About is prose and carries no photograph: a second portrait of the same man in
+  the same suit on the same rooftop is the "one afternoon rather than a career" failure.
+- **AVIF primary, JPEG fallback, no WebP.** `sips` writes AVIF but not WebP. AVIF covers
+  Chrome 85+, Firefox 93+, Safari 16.4+; JPEG catches the rest. Desktop first load is
+  ~125KB, under the 216KB Phase 1 budget despite far bigger pictures.
+- **`sips` gotchas:** resize *then* quality-encode, or the quality flag is ignored and you
+  get default-quality files. `-c` crops centred only; there is no offset crop.
+- **Colour correction is still outstanding** on the whole session — the skin reads
+  warm-pushed. `sips` cannot grade; that needs Photos, Lightroom, or Preview on the masters.
 
 ## Copy standard — read this before writing a sentence
 
@@ -306,9 +346,11 @@ something seems to need JS, that's a conversation, not a commit.
 Video embeds use `youtube-nocookie.com`, which sets no tracking cookie until playback
 starts. **This matters more now that the Teaching page can bring minors onto the site.**
 
-## Phase 2 — what's left, and its gates
+## Remaining pages — what's left, and its gates
 
 Build order, each shipping only when its gate clears. Nothing here blocks anything else.
+
+Home, About, Teaching, and Contact are live. What follows is everything that is not.
 
 1. ~~**Teaching**~~ — built, and rebuilt on 2026-08-14 around the two studios rather than
    around a philosophy statement. It leads with a sample-lesson invitation, gives each

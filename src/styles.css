@@ -1,6 +1,6 @@
 /* ==========================================================================
    christianhowardtrombone.com
-   Phase 2 — home, about, teaching. Full-bleed hero, dark treatment.
+   Phase 3 — home, about, teaching, contact. Full-bleed hero, dark treatment.
    ========================================================================== */
 
 :root {
@@ -512,7 +512,3 @@ footer {
   width: 100%;
   height: auto;
 }
-
-/* A 4:5 portrait at the full 820px measure would stand over 1000px tall and
-   bully the prose. Held to a column width instead. */
-.page-figure--portrait { max-width: 24rem; }
