@@ -36,6 +36,9 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      # House rules from CLAUDE.md, enforced. Fails the check rather than the
+      # deploy, so a rule violation is caught on the PR and never reaches main.
+      - run: node tools/verify.mjs
       # Pages-specific steps are skipped on PRs — there the job is only proving
       # that the site builds.
       - uses: actions/configure-pages@v5
