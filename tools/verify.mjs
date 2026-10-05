@@ -131,6 +131,31 @@ const present = existsSync(join(SITE, "img")) ? readdirSync(join(SITE, "img")) :
 for (const r of referenced) if (!present.includes(r)) fail("image-exists", `/img/${r}`, "referenced but missing");
 for (const p of present) if (!referenced.has(p)) warn("image-unused", `/img/${p}`, "present but unreferenced");
 
+// AVIF with an odd dimension decodes to pure black from sips, silently: exit 0,
+// normal file size, correct dimensions reported. It only shows at the viewport
+// width that picks that variant, so a hero looks fine until someone maximises
+// the window. Read the ispe box out of the AVIF container and check parity.
+function avifDims(file) {
+  // An AVIF can carry several ispe boxes — a thumbnail's comes first. Take the
+  // largest, which is the primary image.
+  const b = readFileSync(file);
+  const needle = Buffer.from("ispe");
+  let at = 0, best = null;
+  while ((at = b.indexOf(needle, at)) !== -1) {
+    const w = b.readUInt32BE(at + 8), h = b.readUInt32BE(at + 12);
+    if (w > 0 && h > 0 && w < 65536 && h < 65536 && (!best || w * h > best.w * best.h))
+      best = { w, h };
+    at += 4;
+  }
+  return best;
+}
+for (const f of present.filter((n) => n.endsWith(".avif"))) {
+  const d = avifDims(join(SITE, "img", f));
+  if (!d) { warn("avif-dimensions", `/img/${f}`, "no ispe box — could not read dimensions"); continue; }
+  if (d.w % 2 || d.h % 2)
+    fail("avif-even-dimensions", `/img/${f}`, `${d.w}x${d.h} — odd dimension, sips writes these black`);
+}
+
 // No rounded corners — sharp edges are the system, not an accident.
 const css = readFileSync(join(SITE, "styles.css"), "utf8");
 const radii = (css.match(/border-radius/g) || []).length;
