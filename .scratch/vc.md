@@ -84,41 +84,6 @@ src/
 `src/_data/site.js` — **in the same commit, never before.** The sitemap picks it up
 automatically.
 
-## Verification — the rules are enforced, not remembered
-
-```
-npm run verify        # clean, build, then check the built output
-```
-
-`tools/verify.mjs` checks the built HTML in `_site/` against the rules in this file, and
-**the Pages workflow runs it on every pull request.** A violation fails the check, so it
-is caught on the PR and never reaches `main`. No dependencies; it reads the build.
-
-Enforced today: one `<h1>` per page · meta description ≤160 · OG tags and canonical
-present · no sentence over 38 words · no contractions · no `&nbsp;` in an `<h1>` · banned
-academic register · "the University of Northwestern", never bare · no LinkedIn · never
-"ABD" · "DSSO" spelled out · no executable JavaScript · nav links resolve to real pages ·
-every referenced image exists · **AVIF dimensions even on both axes** · no
-`border-radius` · homepage weight budget.
-
-**Two things it deliberately does not do.**
-
-*Horizontal overflow at 320 / 375 / 768 / 1366* needs a real browser and is still a human
-step. So is looking at the hero. The preview pane's screenshots degrade after heavy use —
-they start returning black or shrunken frames for pages that render fine. Close the tab and
-open a fresh one; don't debug the page.
-
-*It does not judge.* It catches mechanical violations, not a limp sentence or a photograph
-that crops him out. Those still need reading and looking.
-
-**Changing a rule means changing two places** — the prose here and the check in
-`tools/verify.mjs`. That is deliberate: a rule that exists only as prose gets re-derived
-and re-broken, and one that exists only as code loses the reason it was written.
-
-**Test the checker by breaking things**, not by watching it pass:
-`node tools/verify.mjs <dir>` takes a directory, so copy `_site`, inject a violation, and
-confirm it fires.
-
 ## Brand — enforce on every output
 
 Taken from the live build. Do not improvise new values; if something isn't specified
@@ -138,28 +103,22 @@ here, match what exists or ask.
 - **Hero pattern:** an `<img>` with `object-fit: cover`, not a CSS background, so it keeps
   `srcset`, `alt`, and priority loading. **Desktop and mobile are separate frames**, not
   one image re-cropped by CSS — a 1.9:1 photograph in a phone viewport collapses to a
-  vertical sliver, so `<source media="(max-width: 767px)">` swaps in a 4:5 crop. Both are
-  crops of **IMG_1598**, taken from the original rather than the delivered 21:9 export,
-  which had cut the top off and removed the sky the type sits on.
-  `object-position` is `50% 50%` desktop, `50% 62%` mobile.
-- **The type sits at the TOP of the hero** (`justify-content: flex-start` on
-  `.hero__inner`). This was a deliberate change on 2026-10-05 and it is what makes the
-  chosen frame work: he is playing in the lower half, so bottom-aligned type collided with
-  him at every framing. Do not revert it to `flex-end` without re-testing the collision —
-  that assumption was carried unexamined from the Phase 1 autumn hero for two rounds.
-- **The hero scrim is two layers.** A top-left corner wedge under the type
-  (`to bottom right`, 0.90 → transparent by 62%), and a light vertical pass that protects
-  the nav at the top and settles the deck at the bottom. Both tinted to `--bg`
-  `rgb(20,18,15)`, never neutral black — the photography is a cool city against a warm
-  palette, and a neutral scrim greys it where a warm one pulls it toward the page.
-  - **The wedge follows the type.** When the type was at the bottom the wedge ran
-    `to top right`; a full-width bottom gradient swallowed his hands and the bell. Put the
-    scrim where the picture has least to lose.
-  - **Keep the top of the vertical pass.** Without it the nav sits on open sky and
-    disappears.
+  vertical sliver, so `<source media="(max-width: 767px)">` swaps in a 4:5 crop.
+  `object-position` is `52% 46%` desktop, `50% 30%` mobile.
+- **The hero scrim is three layers, and each one has a job.** A short top band so the nav
+  stays legible; a bottom-left corner wedge under the type; and a soft 100deg pass on the
+  left edge. All tinted to `--bg` `rgb(20,18,15)`, never neutral black — the photography is
+  a cool city against a warm palette, and a neutral scrim greys it where a warm one pulls
+  it toward the page and lets the sunset keep reading as brass.
+  - **Do not make the bottom scrim full-width.** It was `to top` and it swallowed his hands
+    and the bell of the trombone. `to top right` covers the type and clears the subject.
+  - **Do not remove the top band.** Without it the nav sits on open sky at 78% white and
+    disappears. The corner wedge deliberately leaves the top-right clear so the skyline
+    survives, which is exactly where the nav lives.
 - **The hero name wraps to two lines on purpose.** `max-width: 11ch` on `.hero h1`. One line
-  of "Christian Howard" runs about 57% of the measure and collided with the subject at
-  every framing. Natural wrap — no `<br>`, no `&nbsp;`.
+  of "Christian Howard" runs about 57% of the measure and the subject begins at 49%, so it
+  collided at every framing. Natural wrap — no `<br>`, no `&nbsp;`.
+
 - **Nav:** overlaid on the hero on Home (`.nav--over-hero`, absolute, aligned to the
   1400px hero measure); in flow with a hairline on interior pages, aligned to the 820px
   content measure. No JavaScript, so there is no hamburger — the links wrap.
@@ -194,9 +153,8 @@ here, match what exists or ask.
 - **An overlay hero needs the subject large AND a wide quiet area.** Most frames have one
   or the other. If a candidate has only one, it is not a hero, whatever else it has going
   for it — that is what ruled out both frames the image brief recommended.
-- **One image per page, and one idea per image.** Home is IMG_1598 (playing, skyline),
-  Teaching is IMG_1554 (two instruments, the doubling), About is IMG_1615 (the portrait).
-  The social card is a 1200x630 crop of the hero frame so the shared link matches the page. Three frames from one session is the ceiling — a fourth
+- **One image per page, and one idea per image.** Home is identity, Teaching is the
+  doubling, About is the portrait. Three frames from one session is the ceiling — a fourth
   tips into the "one afternoon rather than a career" failure the image brief warns about.
   *(About briefly carried no photograph; Christian asked for one back on 2026-10-05. The
   reason it was pulled was a layout fault — a 24rem inset in an 820px measure leaving dead

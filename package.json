@@ -2,12 +2,13 @@
   "name": "christianhowardtrombone",
   "version": "2.0.0",
   "private": true,
-  "description": "christianhowardtrombone.com — static site",
+  "description": "christianhowardtrombone.com \u2014 static site",
   "license": "UNLICENSED",
   "scripts": {
     "build": "eleventy",
     "serve": "eleventy --serve",
-    "clean": "rm -rf _site"
+    "clean": "rm -rf _site",
+    "verify": "npm run clean && npm run build && node tools/verify.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2"
