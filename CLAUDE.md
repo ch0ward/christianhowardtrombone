@@ -84,6 +84,41 @@ src/
 `src/_data/site.js` — **in the same commit, never before.** The sitemap picks it up
 automatically.
 
+## Verification — the rules are enforced, not remembered
+
+```
+npm run verify        # clean, build, then check the built output
+```
+
+`tools/verify.mjs` checks the built HTML in `_site/` against the rules in this file, and
+**the Pages workflow runs it on every pull request.** A violation fails the check, so it
+is caught on the PR and never reaches `main`. No dependencies; it reads the build.
+
+Enforced today: one `<h1>` per page · meta description ≤160 · OG tags and canonical
+present · no sentence over 38 words · no contractions · no `&nbsp;` in an `<h1>` · banned
+academic register · "the University of Northwestern", never bare · no LinkedIn · never
+"ABD" · "DSSO" spelled out · no executable JavaScript · nav links resolve to real pages ·
+every referenced image exists · **AVIF dimensions even on both axes** · no
+`border-radius` · homepage weight budget.
+
+**Two things it deliberately does not do.**
+
+*Horizontal overflow at 320 / 375 / 768 / 1366* needs a real browser and is still a human
+step. So is looking at the hero. The preview pane's screenshots degrade after heavy use —
+they start returning black or shrunken frames for pages that render fine. Close the tab and
+open a fresh one; don't debug the page.
+
+*It does not judge.* It catches mechanical violations, not a limp sentence or a photograph
+that crops him out. Those still need reading and looking.
+
+**Changing a rule means changing two places** — the prose here and the check in
+`tools/verify.mjs`. That is deliberate: a rule that exists only as prose gets re-derived
+and re-broken, and one that exists only as code loses the reason it was written.
+
+**Test the checker by breaking things**, not by watching it pass:
+`node tools/verify.mjs <dir>` takes a directory, so copy `_site`, inject a violation, and
+confirm it fires.
+
 ## Brand — enforce on every output
 
 Taken from the live build. Do not improvise new values; if something isn't specified
@@ -154,13 +189,28 @@ here, match what exists or ask.
   or the other. If a candidate has only one, it is not a hero, whatever else it has going
   for it — that is what ruled out both frames the image brief recommended.
 - **One image per page, and one idea per image.** Home is identity, Teaching is the
-  doubling. About is prose and carries no photograph: a second portrait of the same man in
-  the same suit on the same rooftop is the "one afternoon rather than a career" failure.
+  doubling, About is the portrait. Three frames from one session is the ceiling — a fourth
+  tips into the "one afternoon rather than a career" failure the image brief warns about.
+  *(About briefly carried no photograph; Christian asked for one back on 2026-10-05. The
+  reason it was pulled was a layout fault — a 24rem inset in an 820px measure leaving dead
+  space beside it — and the fix is to run figures at full measure, which both interior
+  pages now do.)*
 - **AVIF primary, JPEG fallback, no WebP.** `sips` writes AVIF but not WebP. AVIF covers
   Chrome 85+, Firefox 93+, Safari 16.4+; JPEG catches the rest. Desktop first load is
   ~125KB, under the 216KB Phase 1 budget despite far bigger pictures.
 - **`sips` gotchas:** resize *then* quality-encode, or the quality flag is ignored and you
   get default-quality files. `-c` crops centred only; there is no offset crop.
+- **AVIF dimensions must be EVEN on both axes.** `sips` silently writes an all-black AVIF
+  when the height is odd. It exits 0, the file size looks completely normal, and the
+  failure only shows at the viewport width where the browser picks that variant — so a
+  hero can look fine all day and go black when someone maximises the window. Two files
+  shipped this way before it was caught (`1200x631`, `2560x1347`); every even-height file
+  in the repo decoded correctly. Re-encoding at other qualities does not help; only the
+  dimensions matter. Use `sips -z <even-h> <even-w>` for exact control rather than `-Z`,
+  which preserves aspect and lands on odd numbers.
+- **Verify an encode by sampling pixels, not by trusting the exit code.** Load the file in
+  the browser and `drawImage` it to a canvas, then read a few pixels. File size, `sips -g`
+  dimensions, and a 200 response all look healthy on a black AVIF.
 - **Colour correction is still outstanding** on the whole session — the skin reads
   warm-pushed. `sips` cannot grade; that needs Photos, Lightroom, or Preview on the masters.
 
@@ -413,6 +463,9 @@ and drop the `start` parameter.
 
 ## Session hygiene
 
+- **Write scratch files to the session scratchpad, never `/tmp`.** `/tmp` is outside the
+  granted directories, so every intermediate crop or test file triggers a folder-access
+  prompt. Dozens of them in one session is enough to make the work unusable for the user.
 - Commit per verified change. Branch, PR, merge.
 - **Persist durable decisions to the brain, not just chat.** Update
   `[[trombone-website-build]]` with state and next actions; anything that closes a real
