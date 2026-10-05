@@ -2,8 +2,8 @@ module.exports = {
   url: "https://christianhowardtrombone.com",
   name: "Christian Howard",
   // Every page shares one social preview image. Swap here, not per page.
-  ogImage: "/img/og.jpg",
-  ogImageAlt: "Christian Howard holding a tenor trombone.",
+  ogImage: "/img/og-card.jpg",
+  ogImageAlt: "Christian Howard with tenor and bass trombone on a downtown Minneapolis rooftop at sunset.",
 
   // The contact address, defined once. It appears on four pages — changing it
   // in one place is the whole point. To switch to christian@chtrombone.com,

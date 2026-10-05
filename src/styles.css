@@ -1,6 +1,6 @@
 /* ==========================================================================
    christianhowardtrombone.com
-   Phase 2 — home, about, teaching. Full-bleed hero, dark treatment.
+   Phase 3 — home, about, teaching, contact. Full-bleed hero, dark treatment.
    ========================================================================== */
 
 :root {
@@ -121,7 +121,7 @@ img { display: block; }
   justify-content: flex-end;
 }
 
-.nav--over-hero .nav__links a { color: rgba(255, 255, 255, 0.78); }
+.nav--over-hero .nav__links a { color: #fff; }
 
 .nav--over-hero .nav__links a:hover,
 .nav--over-hero .nav__links a:focus-visible { color: #fff; }
@@ -144,20 +144,35 @@ img { display: block; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* keeps his face in frame as the viewport aspect changes */
-  object-position: 66% 22%;
+  /* Centre-weighted: the 21:9 frame puts the subject mid-width, and a tall
+     viewport crops the sides. Mobile uses its own frame, retuned below. */
+  object-position: 50% 50%;
+}
+
+@media (max-width: 767px) {
+  .hero__img { object-position: 50% 62%; }
 }
 
 .hero__scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    100deg,
-    rgba(8, 7, 5, 0.88) 0%,
-    rgba(8, 7, 5, 0.66) 40%,
-    rgba(8, 7, 5, 0.06) 72%,
-    rgba(8, 7, 5, 0.30) 100%
-  );
+  /* Two layers. The vertical one protects the type, which sits at the BOTTOM
+     of the hero, not the top. The diagonal one carries the left edge.
+     Both are tinted to --bg (20,18,15) rather than neutral black: this frame is
+     a cool city and a neutral scrim greys it, where a warm one pulls it toward
+     the page temperature and lets the sunset keep reading as brass. */
+  background:
+    linear-gradient(to bottom right,
+      rgba(20, 18, 15, 0.90) 0%,
+      rgba(20, 18, 15, 0.64) 24%,
+      rgba(20, 18, 15, 0.20) 46%,
+      rgba(20, 18, 15, 0.00) 62%),
+    linear-gradient(to bottom,
+      rgba(20, 18, 15, 0.46) 0%,
+      rgba(20, 18, 15, 0.12) 14%,
+      rgba(20, 18, 15, 0.00) 30%,
+      rgba(20, 18, 15, 0.00) 78%,
+      rgba(20, 18, 15, 0.34) 100%);
 }
 
 .hero__inner {
@@ -166,10 +181,10 @@ img { display: block; }
   max-width: 1400px;
   margin: 0 auto;
   padding: var(--gutter);
-  padding-bottom: clamp(3rem, 8vh, 6rem);
+  padding-top: clamp(4.5rem, 11vh, 7.5rem);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .hero__eyebrow {
@@ -188,6 +203,11 @@ img { display: block; }
   font-size: clamp(3rem, 1.6rem + 6.2vw, 7rem);
   line-height: 0.95;
   letter-spacing: 0.01em;
+  /* The hero frame puts him in the right half. One line of "Christian Howard"
+     runs about 57% of the measure and would collide, so the name is allowed
+     only ~11 characters and wraps to two lines. Natural wrap, no <br>, no
+     &nbsp; — see the heading rule in CLAUDE.md. */
+  max-width: 11ch;
   text-shadow: 0 2px 40px rgba(0, 0, 0, 0.5);
 }
 
@@ -479,4 +499,13 @@ footer {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* --------------------------------------------------------------- Figures */
+
+.page-figure { margin: clamp(2rem, 5vw, 3rem) 0; }
+
+.page-figure img {
+  width: 100%;
+  height: auto;
 }

@@ -12,7 +12,7 @@ schema: |
     "@type": "Person",
     "name": "Christian Howard",
     "url": "https://christianhowardtrombone.com/",
-    "image": "https://christianhowardtrombone.com/img/og.jpg",
+    "image": "https://christianhowardtrombone.com/img/og-card.jpg",
     "jobTitle": "Trombonist and Educator",
     "description": "Trombonist and educator based in the Twin Cities, active across orchestral, chamber, and solo settings on alto, tenor, bass trombone, and euphonium.",
     "address": {
@@ -35,15 +35,24 @@ schema: |
 <!-- ============ HERO (full-bleed) ============ -->
 <header class="hero">
   <picture>
-    <source type="image/webp"
-      srcset="/img/wide-1600.webp 1600w, /img/wide-2400.webp 2400w"
+    <!-- Mobile gets its own 4:5 frame, not a CSS crop of the 21:9 desktop image:
+         a 2.33:1 photo in a 0.46:1 viewport collapses to a vertical sliver. -->
+    <source media="(max-width: 767px)" type="image/avif"
+      srcset="/img/hero-mobile-900.avif 900w, /img/hero-mobile-1200.avif 1200w"
+      sizes="100vw">
+    <source media="(max-width: 767px)" type="image/jpeg"
+      srcset="/img/hero-mobile-900.jpg 900w, /img/hero-mobile-1200.jpg 1200w"
+      sizes="100vw">
+
+    <source type="image/avif"
+      srcset="/img/hero-desktop-1200.avif 1200w, /img/hero-desktop-1600.avif 1600w, /img/hero-desktop-2560.avif 2560w"
       sizes="100vw">
     <img class="hero__img"
-      src="/img/wide-1600.jpg"
-      srcset="/img/wide-1600.jpg 1600w, /img/wide-2400.jpg 2400w"
+      src="/img/hero-desktop-1600.jpg"
+      srcset="/img/hero-desktop-1200.jpg 1200w, /img/hero-desktop-1600.jpg 1600w, /img/hero-desktop-2560.jpg 2560w"
       sizes="100vw"
-      width="2400" height="1868"
-      alt="Christian Howard, trombonist and educator, holding a tenor trombone."
+      width="2560" height="1344"
+      alt="Christian Howard playing tenor trombone on a downtown Minneapolis rooftop, the city skyline rising behind him at sunset."
       fetchpriority="high" decoding="async">
   </picture>
 
